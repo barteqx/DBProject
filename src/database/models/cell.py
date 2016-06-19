@@ -9,6 +9,6 @@ class Cell(BaseModel):
     number  = Column(Integer, nullable=False, unique=True)
 
     def __repr__(self):
-        return "<Cell id = %d  number = %d>" % (
+        return "<Cell: id = %d  number = %d>" % (
             self.id, self.number
         )
