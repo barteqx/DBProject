@@ -1,4 +1,5 @@
 from sqlalchemy import create_engine
+from src.database.constraints import DBConstraints
 
 
 class EngineAlreadyCreatedException(Exception):
@@ -28,8 +29,12 @@ class DBEngine:
         self.reset_schema()
 
     def reset_schema(self):
+        constaints = DBConstraints(DBEngine.get_engine())
+
         self.base_model.metadata.drop_all(DBEngine.get_engine())
         self.base_model.metadata.create_all(DBEngine.get_engine())
+
+        constaints.create_constraints()
 
 
     def check_schema(self):

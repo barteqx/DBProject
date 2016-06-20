@@ -4,7 +4,14 @@ class DBConstraints:
 
     def __init__(self, engine):
         self.engine = engine
-        self.constraints = []
+        self.constraints = [
+            """
+
+            """,
+            """
+
+            """
+        ]
 
     def create_constraints(self):
         for constraint in self.constraints:
