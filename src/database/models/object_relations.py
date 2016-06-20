@@ -5,6 +5,7 @@ class IsWitness(BaseModel):
 
     __tablename__ = "is_witness"
 
+    id = Column(Integer, primary_key=True)
     citizen_id = Column(Integer, ForeignKey("citizen.id"), nullable=False)
     investigation_id = Column(Integer, ForeignKey("investigation.id"), nullable=False)
 
@@ -17,6 +18,7 @@ class IsSuspected(BaseModel):
 
     __tablename__ = "is_suspected"
 
+    id = Column(Integer, primary_key=True)
     citizen_id = Column(Integer, ForeignKey("citizen.id"), nullable=False)
     investigation_id = Column(Integer, ForeignKey("investigation.id"), nullable=False)
 

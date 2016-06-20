@@ -1,4 +1,4 @@
-from sqlalchemy import Integer
+from sqlalchemy import Integer, Column, ForeignKey
 from src.database.base_model import BaseModel
 
 class Policeman(BaseModel):

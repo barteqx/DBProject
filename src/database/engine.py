@@ -17,7 +17,7 @@ class DBEngine:
         self.create()
 
     def create(self):
-        DBEngine.engine = create_engine('postgresql://%s:%s@%s:%d/%s'
+        DBEngine.engine = create_engine('postgresql://%s:%s@%s:%s/%s'
                                         % (self.config.user, self.config.password,
                                            self.config.host, self.config.port,
                                            self.config.database))

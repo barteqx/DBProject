@@ -1,6 +1,6 @@
 class AppConfig:
-    user = ""
-    password = ""
-    host = ""
-    port = ""
-    database = ""
+    user = "bartoszzasieczny"
+    password = "1234567890"
+    host = "localhost"
+    port = "5342"
+    database = "dbproject"

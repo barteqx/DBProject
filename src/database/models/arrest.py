@@ -1,7 +1,7 @@
 from sqlalchemy import Column, Integer, String, ForeignKey, Date, Boolean
 from src.database.base_model import BaseModel
 
-class Investigation(BaseModel):
+class Arrest(BaseModel):
 
     __tablename__ = 'arrest'
 
@@ -14,6 +14,6 @@ class Investigation(BaseModel):
 
 
     def __repr__(self):
-        return "<Arrest: id = %d  start_date = %s  closed_date = %s  cell_id = %d citizen_id = %d" % (
-            self.id, self.start_date, self.closed_date, self.cell_id, self.citizen_id
+        return "<Arrest: id = %d  start_date = %s  closed_date = %s  cell_id = %d citizen_id = %>" % (
+            self.id, self.start_date, self.end_date, self.cell_id, self.citizen_id
         )
