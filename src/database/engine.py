@@ -4,6 +4,7 @@ from sqlalchemy import create_engine
 class EngineAlreadyCreatedException(Exception):
     pass
 
+
 class DBEngine:
     engine = None
 
@@ -49,10 +50,10 @@ class DBEngine:
         result = [row[0] for row in DBEngine.engine.execute(_query)]
 
         for table in _tables:
-            if table not in result: return False
+            if table not in result:
+                return False
 
-
-
+        return True
 
     @staticmethod
     def get_engine():
