@@ -15,8 +15,6 @@ CREATE OR REPLACE FUNCTION block_overlapping_arrests()
       END LOOP;
     END
   $X$ LANGUAGE plpgsql;
-
-
-CREATE TRIGGER block_overlapping_arrests BEFORE DELETE ON policeman
+CREATE TRIGGER block_overlapping_arrests BEFORE DELETE ON arrest
   FOR EACH ROW
     EXECUTE PROCEDURE block_overlapping_arrests();

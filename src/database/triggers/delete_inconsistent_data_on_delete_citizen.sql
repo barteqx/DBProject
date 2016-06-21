@@ -11,8 +11,6 @@ CREATE OR REPLACE FUNCTION delete_inconsistent_data_on_delete_citizen()
       DELETE FROM arrest WHERE arrest.citizen_id = NEW.id;
     END
   $X$ LANGUAGE plpgsql;
-
-
 CREATE TRIGGER delete_inconsistent_data_on_delete_citizen BEFORE DELETE ON citizen
   FOR EACH ROW
     EXECUTE PROCEDURE delete_inconsistent_data_on_delete_citizen();

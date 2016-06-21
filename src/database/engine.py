@@ -33,11 +33,13 @@ class DBEngine:
         constraints = DBConstraints(DBEngine.get_engine())
         triggers = DBTriggers(DBEngine.get_engine())
 
+        triggers.drop_triggers()
+
         self.base_model.metadata.drop_all(DBEngine.get_engine())
         self.base_model.metadata.create_all(DBEngine.get_engine())
 
         constraints.create_constraints()
-        triggers.create_constraints()
+        triggers.create_triggers()
 
     def check_schema(self):
 

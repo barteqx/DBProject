@@ -1,0 +1,7 @@
+DROP TRIGGER delete_inconsistent_data_on_delete_citizen ON citizen;
+DROP TRIGGER delete_inconsistent_data_on_delete_policeman ON policeman;
+DROP TRIGGER delete_inconsistent_data_on_delete_investigation ON investigation;
+DROP TRIGGER delete_inconsistent_data_on_delete_cell ON cell;
+DROP TRIGGER block_more_than_one_prisoner_in_one_cell ON arrest;
+DROP TRIGGER block_overlapping_arrests ON arrest;
+DROP TRIGGER block_policeman_addition_without_account ON policeman;

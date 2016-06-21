@@ -9,8 +9,6 @@ CREATE OR REPLACE FUNCTION delete_inconsistent_data_on_delete_policeman()
 
     END
   $X$ LANGUAGE plpgsql;
-
-
 CREATE TRIGGER delete_inconsistent_data_on_delete_policeman BEFORE DELETE ON policeman
   FOR EACH ROW
     EXECUTE PROCEDURE delete_inconsistent_data_on_delete_policeman();
