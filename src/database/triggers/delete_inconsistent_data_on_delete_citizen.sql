@@ -1,12 +1,3 @@
-__author__ = 'bartoszzasieczny'
-
-
-class DBTriggers:
-
-    def __init__(self, engine):
-        self.engine = engine
-        self.triggers = [
-            """
 CREATE OR REPLACE FUNCTION delete_inconsistent_data_on_delete_citizen()
   RETURNS TRIGGER
   AS
@@ -25,13 +16,3 @@ CREATE OR REPLACE FUNCTION delete_inconsistent_data_on_delete_citizen()
 CREATE TRIGGER delete_inconsistent_data_on_delete_citizen BEFORE DELETE ON citizen
   FOR EACH ROW
     EXECUTE PROCEDURE delete_inconsistent_data_on_delete_citizen();
-
-            """,
-            """
-
-            """
-        ]
-
-    def create_triggers(self):
-        for trigger in self.triggers:
-            self.engine.execute(trigger)

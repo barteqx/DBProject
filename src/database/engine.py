@@ -2,6 +2,7 @@ from sqlalchemy import create_engine
 from src.database.constraints import DBConstraints
 from src.database.triggers import DBTriggers
 
+
 class EngineAlreadyCreatedException(Exception):
     pass
 
@@ -37,7 +38,6 @@ class DBEngine:
 
         constraints.create_constraints()
         triggers.create_constraints()
-
 
     def check_schema(self):
 

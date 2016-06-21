@@ -10,7 +10,7 @@ class Fine(BaseModel):
     time            = Column(Time, nullable=False)
     amount          = Column(Integer, nullable=False)
     paid            = Column(Boolean, nullable=False, default=False)
-    policeman_id    = Column(Integer, ForeignKey("policeman.id"))
+    policeman_id    = Column(Integer, ForeignKey("policeman.id"), nullable=True)
     citizen_id      = Column(Integer, ForeignKey("citizen.id"))
 
     def __repr__(self):
