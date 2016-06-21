@@ -15,6 +15,6 @@ class DBConstraints:
 
     def create_constraints(self):
         for constraint in self.constraints:
-            self.engine.get_engine().execute(constraint)
+            self.engine.execute(constraint)
 
 

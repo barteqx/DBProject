@@ -1,6 +1,6 @@
 from sqlalchemy import create_engine
 from src.database.constraints import DBConstraints
-
+from src.database.triggers import DBTriggers
 
 class EngineAlreadyCreatedException(Exception):
     pass
@@ -22,19 +22,21 @@ class DBEngine:
                                            self.config.host, self.config.port,
                                            self.config.database))
 
-    def create_schena(self):
+    def create_schema(self):
         if self.check_schema():
             return 0
 
         self.reset_schema()
 
     def reset_schema(self):
-        constaints = DBConstraints(DBEngine.get_engine())
+        constraints = DBConstraints(DBEngine.get_engine())
+        triggers = DBTriggers(DBEngine.get_engine())
 
         self.base_model.metadata.drop_all(DBEngine.get_engine())
         self.base_model.metadata.create_all(DBEngine.get_engine())
 
-        constaints.create_constraints()
+        constraints.create_constraints()
+        triggers.create_constraints()
 
 
     def check_schema(self):

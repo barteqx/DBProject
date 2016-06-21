@@ -16,4 +16,4 @@ class DBTriggers:
 
     def create_triggers(self):
         for trigger in self.triggers:
-            self.engine.get_engine().execute(trigger)
+            self.engine.execute(trigger)
