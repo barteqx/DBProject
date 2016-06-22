@@ -1,6 +1,6 @@
 class AppConfig:
-    user = "postgres"
-    password = "dupa1234"
+    user = "bartoszzasieczny"
+    password = "1234567890"
     host = "localhost"
     port = "5432"
     database = "dbproject"
