@@ -2,20 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="23b72f81-d551-470c-9532-7ed0250436ec" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/database/triggers/triggers_delete" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/application.py" afterPath="$PROJECT_DIR$/application.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/config.py" afterPath="$PROJECT_DIR$/src/config.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/database/constraints.py" afterPath="$PROJECT_DIR$/src/database/constraints.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/database/engine.py" afterPath="$PROJECT_DIR$/src/database/engine.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/database/triggers.py" afterPath="$PROJECT_DIR$/src/database/triggers.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/database/triggers/block_more_than_one_prisoner_in_one_cell.sql" afterPath="$PROJECT_DIR$/src/database/triggers/block_more_than_one_prisoner_in_one_cell.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/database/triggers/block_overlapping_arrests.sql" afterPath="$PROJECT_DIR$/src/database/triggers/block_overlapping_arrests.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/database/triggers/block_policeman_addition_without_account.sql" afterPath="$PROJECT_DIR$/src/database/triggers/block_policeman_addition_without_account.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/database/triggers/delete_inconsistent_data_on_delete_cell.sql" afterPath="$PROJECT_DIR$/src/database/triggers/delete_inconsistent_data_on_delete_cell.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/database/triggers/delete_inconsistent_data_on_delete_citizen.sql" afterPath="$PROJECT_DIR$/src/database/triggers/delete_inconsistent_data_on_delete_citizen.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/database/triggers/delete_inconsistent_data_on_delete_investigation.sql" afterPath="$PROJECT_DIR$/src/database/triggers/delete_inconsistent_data_on_delete_investigation.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/database/triggers/delete_inconsistent_data_on_delete_policeman.sql" afterPath="$PROJECT_DIR$/src/database/triggers/delete_inconsistent_data_on_delete_policeman.sql" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application.py" afterPath="$PROJECT_DIR$/application.py" />
     </list>
     <ignored path="DB_Project.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -111,8 +99,8 @@
       <file leaf-file-name="application.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="594">
-              <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+            <state relative-caret-position="468">
+              <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -511,7 +499,14 @@
       <option name="project" value="LOCAL" />
       <updated>1466542091235</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="moar code">
+      <created>1466546954035</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1466546954035</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -572,7 +567,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="more code" />
     <MESSAGE value="some triggers" />
-    <option name="LAST_COMMIT_MESSAGE" value="some triggers" />
+    <MESSAGE value="moar code" />
+    <option name="LAST_COMMIT_MESSAGE" value="moar code" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1010,8 +1006,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
-          <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+        <state relative-caret-position="468">
+          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>

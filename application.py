@@ -24,6 +24,7 @@ class DBApplication:
         s.add(user)
         s.commit()
 
+
 def main():
     app = DBApplication()
     app.initialize()
