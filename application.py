@@ -3,6 +3,25 @@ from src.config import AppConfig
 from sqlalchemy.orm import sessionmaker
 from datetime import datetime
 
+import web
+
+web.config.debug = False
+
+urls = (
+  '/login', 'Login',
+  '/reset', 'Reset',
+)
+app = web.application(urls, locals())
+
+render = web.template.render('src/templates/')
+
+
+class index:
+    def GET(self):
+        name = 'Bob'
+        return render.index(name)
+
+
 class DBApplication:
 
     def __init__(self):
@@ -24,10 +43,16 @@ class DBApplication:
         s.add(user)
         s.commit()
 
+
 def main():
     app = DBApplication()
     app.initialize()
-    app.create_admin()
+    #app.create_admin()
+
+    appdb = web.application(urls, globals())
+    store = web.session.DiskStore('sessions')
+    session = web.session.Session(app, store, initializer={'login': 0, 'privilege': 0})
+    appdb.run()
 
 if __name__ == '__main__':
     main()
