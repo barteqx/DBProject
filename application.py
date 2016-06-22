@@ -1,5 +1,6 @@
 from src.database import *
 from src.config import AppConfig
+from src.urls import urls
 
 from sqlalchemy.orm import sessionmaker
 from datetime import datetime
@@ -8,19 +9,9 @@ import web
 
 web.config.debug = False
 
-urls = (
-  '/login', 'Login',
-  '/reset', 'Reset',
-)
 app = web.application(urls, locals())
 
 render = web.template.render('src/templates/')
-
-
-class index:
-    def GET(self):
-        name = 'Bob'
-        return render.index(name)
 
 
 class DBApplication:
