@@ -1,17 +1,17 @@
 from src.database import *
 from src.config import AppConfig
-from src.urls import urls
+# from src.urls import urls
 
 from sqlalchemy.orm import sessionmaker
 from datetime import datetime
 
-import web
-
-web.config.debug = False
-
-app = web.application(urls, locals())
-
-render = web.template.render('src/templates/')
+# import web
+#
+# web.config.debug = False
+#
+# app = web.application(urls, locals())
+#
+# render = web.template.render('src/templates/')
 
 
 class DBApplication:
@@ -41,10 +41,10 @@ def main():
     app.initialize()
     #app.create_admin()
 
-    appdb = web.application(urls, globals())
-    store = web.session.DiskStore('sessions')
-    session = web.session.Session(app, store, initializer={'login': 0, 'privilege': 0})
-    appdb.run()
+    #appdb = web.application(urls, globals())
+    #store = web.session.DiskStore('sessions')
+    #session = web.session.Session(app, store, initializer={'login': 0, 'privilege': 0})
+    #appdb.run()
 
 if __name__ == '__main__':
     main()
