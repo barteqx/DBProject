@@ -1,11 +1,13 @@
 from src.database import *
 from src.config import AppConfig
-# from src.urls import urls
-
+from src.urls import urls
+from src.controllers.citizen import *
+from src.controllers.users import *
+from src.controllers.index import *
 from sqlalchemy.orm import sessionmaker
 from datetime import datetime
 
-# import web
+import web
 #
 # web.config.debug = False
 #
@@ -41,10 +43,10 @@ def main():
     app.initialize()
     #app.create_admin()
 
-    #appdb = web.application(urls, globals())
+    appdb = web.application(urls, globals())
     #store = web.session.DiskStore('sessions')
     #session = web.session.Session(app, store, initializer={'login': 0, 'privilege': 0})
-    #appdb.run()
+    appdb.run()
 
 if __name__ == '__main__':
     main()

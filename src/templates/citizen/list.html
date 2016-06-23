@@ -1,7 +1,9 @@
-
-<a href="/create_citizen">Create citizen...</a><
+$def with (c)
+<a href="/">Home</a>
+<br>
+<a href="/create_citizen">Create citizen...</a>
 <table id="citizen_list">
-    $for citizen in citizens:
+    $for citizen in c:
     <tr>
         <td>$citizen.id</td>
         <td>$citizen.name</td>

@@ -7,8 +7,9 @@ CREATE OR REPLACE FUNCTION block_policeman_addition_without_account()
         raise NOTICE 'Policeman must have an account first.';
         RETURN NULL;
       END IF;
+      RETURN NEW;
     END
   $X$ LANGUAGE plpgsql;
-CREATE TRIGGER block_policeman_addition_without_account BEFORE DELETE ON policeman
+CREATE TRIGGER block_policeman_addition_without_account BEFORE INSERT ON policeman
   FOR EACH ROW
     EXECUTE PROCEDURE block_policeman_addition_without_account();

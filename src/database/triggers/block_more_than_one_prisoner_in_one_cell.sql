@@ -14,8 +14,9 @@ CREATE OR REPLACE FUNCTION block_more_than_one_prisoner_in_one_cell()
           RETURN NULL;
         END IF;
       END LOOP;
+      RETURN NEW;
     END
   $X$ LANGUAGE plpgsql;
-CREATE TRIGGER block_more_than_one_prisoner_in_one_cell BEFORE DELETE ON arrest
+CREATE TRIGGER block_more_than_one_prisoner_in_one_cell BEFORE INSERT ON arrest
   FOR EACH ROW
     EXECUTE PROCEDURE block_more_than_one_prisoner_in_one_cell();

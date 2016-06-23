@@ -13,8 +13,9 @@ CREATE OR REPLACE FUNCTION block_overlapping_arrests()
           RETURN NULL;
         END IF;
       END LOOP;
+      RETURN NEW;
     END
   $X$ LANGUAGE plpgsql;
-CREATE TRIGGER block_overlapping_arrests BEFORE DELETE ON arrest
+CREATE TRIGGER block_overlapping_arrests BEFORE INSERT ON arrest
   FOR EACH ROW
     EXECUTE PROCEDURE block_overlapping_arrests();

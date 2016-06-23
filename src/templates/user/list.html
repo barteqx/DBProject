@@ -1,14 +1,16 @@
-
-<a href="/create_citizen">Create citizen...</a><
-<table id="citizen_list">
-    $for citizen in citizens:
+$def with (c)
+<a href="/">Home</a>
+<br>
+<a href="/create_user">Create user...</a>
+<table id="user_list">
+    $for user in c:
     <tr>
-        <td>$citizen.id</td>
-        <td>$citizen.name</td>
-        <td>$citizen.surname</td>
-        <td>$citizen.birth_date</td>
-        <td>$citizen.pesel</td>
-        <td><a href="/edit_citizen?id=$citizen.id">Edit</a></td>
-        <td><a href="/remove_citizen?id=$citizen.id">Remove</a></td>
+        <td>$user.id</td>
+        <td>$user.email</td>
+        <td>$user.password</td>
+        <td>$user.role</td>
+        <td>$user.citizen_id</td>
+        <td><a href="/edit_user?id=$user.id">Edit</a></td>
+        <td><a href="/remove_user?id=$user.id">Remove</a></td>
     </tr>
 </table>
