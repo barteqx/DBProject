@@ -22,8 +22,16 @@ class DBApplication:
         self.engine = engine.DBEngine(AppConfig, base_model.BaseModel)
 
     def initialize(self):
+        Session = sessionmaker(bind=engine.DBEngine.get_engine())
         self.engine.create()
         self.engine.create_schema()
+        s = Session()
+        c = s.query(models.Citizen).filter_by(id=1)
+        try:
+            c.first()
+        except:
+            print "creating admin..."
+            self.create_admin()
 
     def create_admin(self):
         Session = sessionmaker(bind=engine.DBEngine.get_engine())
@@ -41,7 +49,6 @@ class DBApplication:
 def main():
     app = DBApplication()
     app.initialize()
-    #app.create_admin()
 
     appdb = web.application(urls, globals())
     #store = web.session.DiskStore('sessions')

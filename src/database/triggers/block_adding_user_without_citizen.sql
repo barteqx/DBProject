@@ -10,6 +10,6 @@ CREATE OR REPLACE FUNCTION block_adding_user_without_citizen()
       RETURN NEW;
     END
   $X$ LANGUAGE plpgsql;
-CREATE TRIGGER block_adding_user_without_citizen BEFORE INSERT ON "user"
+CREATE TRIGGER block_adding_user_without_citizen BEFORE INSERT OR UPDATE ON "user"
   FOR EACH ROW
     EXECUTE PROCEDURE block_adding_user_without_citizen();
